@@ -1,3 +1,5 @@
+using System;
+
 namespace RPS
 {
   public class RockPS
@@ -8,6 +10,26 @@ namespace RPS
     {
       PlayerOne = playerOneInput;
       PlayerTwo = playerTwoInput;
+    }
+
+    public static string ComputerInput()
+    {
+      Random rnd = new Random();
+      int random = rnd.Next(3);
+      string computer = "";
+      switch (random)
+      {
+        case 0:
+          computer = "rock";
+          break;
+        case 1:
+          computer = "paper";
+          break;
+        case 2:
+          computer = "scissors";
+          break;
+      }
+      return computer;
     }
     public string CompareInputs ()
     {
